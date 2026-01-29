@@ -1,0 +1,13 @@
+{
+  "name": "IframeTube",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "IframeTube",
+  "description": "IframeTube",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

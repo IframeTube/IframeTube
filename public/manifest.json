@@ -1,0 +1,85 @@
+{
+    "manifest_version": 3,
+    "name": "IframeTube - Youtube AdBlocker",
+    "short_name": "IframeTube",
+    "version": "1.0.0",
+    "description": "Removes all of Youtube ads and video buffering. Use mainly in a combo with other adblockers (e.g. uBlock Origin).",
+    "homepage_url": "https://github.com/IframeTube/IframeTube",
+    "author": "IframeTube",
+    "incognito": "split",
+    "minimum_chrome_version": "120",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "*://*.youtube.com/*",
+        "*://*.example.net/*"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "IframeTube popup"
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png",
+        "256": "icons/icon256.png",
+        "512": "icons/icon512.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*",
+                "*://youtube.com/*"
+            ],
+            "exclude_matches": [
+                "*://*.youtube.com/embed/*"
+            ],
+            "js": [
+                "embed/injectors/youtube.injector.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "*://*.example.net/*"
+            ],
+            "include_globs": [
+                "*?*IframeTubeProxy=1*"
+            ],
+            "js": [
+                "embed/injectors/proxy.injector.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "*://*.youtube.com/embed/*"
+            ],
+            "include_globs": [
+                "*?*IframeTubeEmbed=1*"
+            ],
+            "js": [
+                "embed/injectors/embed.injector.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "embed/youtube.js",
+                "embed/proxy.js",
+                "embed/embed.js"
+            ],
+            "matches": [
+                "*://*.youtube.com/*",
+                "*://*.example.net/*"
+            ]
+        }
+    ]
+}

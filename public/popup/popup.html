@@ -1,0 +1,128 @@
+<!-- 
+IframeTube - all rights reserved. copyright (c) 2026
+you may copy this project and modify it for personal use only.
+you may not distribute this project or any modified versions of it without explicit permission from the author.
+
+view the full source code and how this works here: https://github.com/IframeTube/IframeTube
+if you encounter any issues, please report them here: https://github.com/IframeTube/IframeTube/issues
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IframeTube Settings</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+</head>
+
+<body class="IframeTube-popup">
+
+    <div class="popup-container">
+        <h1>IframeTube</h1>
+
+        <div class="tabs">
+            <button id="tab-settings" class="tab active">Settings</button>
+            <button id="tab-issues" class="tab">Issues & FAQ</button>
+            <button id="tab-donate" class="tab">Donate 💚</button>
+        </div>
+
+        <div class="tab-content">
+
+            <div id="panel-settings" class="tab-panel active">
+                <p class="info-text">
+                    Enable or disable IframeTube on Youtube:
+                </p>
+                <div class="controls">
+                    <div class="toggle-wrapper">
+                        <button id="button-toggle" class="toggle-button">Loading...</button>
+                        <svg id="reload-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#c8f0c2" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <path d="M20.49 15a9 9 0 1 1-2.44-9.5L23 10"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <p class="info-text">
+                    Rate the extension, we appreciate your feedback!
+                </p>
+                <div class="rate-section">
+                    <button id="button-rate" class="rate-button">Rate The Extension</button>
+                </div>
+
+                <div class="link-button">
+                    <a href="https://github.com/IframeTube/IframeTube" target="_blank" rel="noopener noreferrer">
+                        View the full source code on GitHub
+                    </a>
+                </div>
+                <div class="link-button">
+                    <button class="button-learn" id="learn-more-button">Learn more about IframeTube</button>
+                </div>
+            </div>
+
+            <div id="panel-issues" class="tab-panel">
+                <p class="info-text">
+                    If you experience any issues, please check our Github wiki for common causes and fixes.
+                </p>
+                <a href="https://github.com/IframeTube/IframeTube" target="_blank" rel="noopener noreferrer"
+                    class="link-button">
+                    View common causes and fixes
+                </a>
+                <p class="info-text">
+                    <br>
+                    Please note that IframeTube should be used in a combination with other adblockers (e.g. uBlock
+                    Origin) for certain features to work correctly.
+                </p>
+            </div>
+
+            <div id="panel-learn" class="tab-panel">
+                <h2 class="panel-title">How to use IframeTube</h2>
+                <br>
+                <p class="info-text">
+                    IframeTube is designed to be used alongside other adblockers (e.g., uBlock Origin) to ensure all
+                    features work correctly and to maintain your privacy.
+                </p>
+                <p class="info-text">
+                    Make sure IframeTube is enabled in the popup settings. Once enabled, the embedded player with all
+                    your favorite features will appear on YouTube video pages. Enjoy! :)
+                </p>
+                <button class="button-learn" id="next-page-button" title="Next page">→</button>
+            </div>
+
+            <div id="panel-learn-2" class="tab-panel">
+                <h2 class="panel-title">How does IframeTube work</h2>
+                <br>
+                <p class="info-text">
+                    IframeTube works by placing an embedded player on the top of the native one. The embedded player is
+                    completely ad free. Do not mistake this for the Google’s version that appears in search results,
+                    which contains plenty of ads.
+
+                </p>
+                <p class="info-text">
+                    IframeTube then recreates all of the native features you love, such as autoplay, theater mode, next
+                    and previous video buttons, preview and more. It does this while being lightweight, completely open
+                    source and free. If you still want to learn more, check out the full documentation below.
+                </p>
+                <a href="https://github.com/IframeTube/IframeTube/wiki/" target="_blank" rel="noopener noreferrer"
+                    class="link-button">
+                    Read the full documentation on GitHub
+                </a>
+            </div>
+
+            <div id="panel-donate" class="tab-panel">
+                <p class="info-text">
+                    If you enjoy using IframeTube, consider supporting its development through a donation.
+                    Your support helps me maintain and improve the extension.
+                </p>
+                <button id="button-donate" class="donate-button">Donate Now 💖</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
