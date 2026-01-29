@@ -21,7 +21,7 @@ IframeTube is a **YouTube ad blocker** designed to be used **together with anoth
 
 Preview of how YouTube looks with IframeTube enabled:
 
-![Preview](IframeTube.mp4)
+[Preview](https://www.youtube.com/watch?v=X6WFM9VHyyw)
 
 * Shows the YouTube player loading
 * Showcases all the includes features inside the player
