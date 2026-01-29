@@ -131,6 +131,7 @@ buttonToggle.addEventListener("click", () => {
 
 // opens the Chrome Web Store rate page
 buttonRate.addEventListener("click", () => {
+    window.open("chromewebstore.google.com/detail/iframetube-youtube-adbloc/popbfaalnmahdonefnbbogalimefpcnm/reviews", "_blank", "noopener,noreferrer");
 });
 
 // shows the learn more panel
