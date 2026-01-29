@@ -21,7 +21,7 @@
         display: none !important;
     }
 
-    /* hides ads (this was taken from: https://greasyfork.org/ru/scripts/447802-youtube-web-tweaks/code, huge thanks to xX_LegendCraftd_Xx :) */
+    /* hides page ads (this was taken from: https://greasyfork.org/ru/scripts/447802-youtube-web-tweaks/code, huge thanks to xX_LegendCraftd_Xx :) */
     .ytd-search ytd-shelf-renderer,
     ytd-reel-shelf-renderer,
     ytd-merch-shelf-renderer,
