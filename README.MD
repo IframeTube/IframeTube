@@ -40,6 +40,8 @@ Preview of how YouTube looks with IframeTube enabled:
    *(I personally recommend uBlock Origin or uBlock Origin Lite).*
 4. Open YouTube and enjoy 🙂
 
+### Firefox
+
 1. Go to Firefox ADD-ONS:
    [IframeTube for Firefox](https://addons.mozilla.org/en-US/firefox/addon/iframetube-youtube-adblocker/)
 2. Click **Add to Firefox** to install IframeTube.
