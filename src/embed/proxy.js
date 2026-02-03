@@ -7,14 +7,14 @@
 // if you encounter any issues, please report them here: https://github.com/IframeTube/IframeTube/issues
 
 
-let IframeTube_initProxy_timeout = false;
-function IframeTube_initProxy() {
+let IframeTube_proxy_init_timeout = false;
+function IframeTube_proxy_init() {
     'use strict';  // better for debugging
 
     // if document body does not exist yet, retry in 100ms until it does
     if (!document.body) {
-        clearTimeout(IframeTube_initProxy_timeout);
-        IframeTube_initProxy_timeout = setTimeout(IframeTube_initProxy, 100);
+        clearTimeout(IframeTube_proxy_init_timeout);
+        IframeTube_proxy_init_timeout = setTimeout(IframeTube_proxy_init, 100);
         return;
     }
 
@@ -81,5 +81,5 @@ function IframeTube_initProxy() {
     // end of IIFE
 }
 
-// inits the proxy
-IframeTube_initProxy();
+// calls the proxy init function
+IframeTube_proxy_init();
