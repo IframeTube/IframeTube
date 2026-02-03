@@ -1771,13 +1771,23 @@
         IframeTube_syncMainPlayer();
         setInterval(IframeTube_syncMainPlayer, 5000);
 
-        // if the iframe somehow reloads, also reload the top window to prevent bugs
-        window.addEventListener('pagehide', (event) => {
-            // only do it if it’s a page reload, not when the user uses the back/forward buttons
-            if (!event.persisted) {
+        // if we are in Firefox, listen for the 'beforeunload' event to reload the top window
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') !== -1) {
+            window.addEventListener('beforeunload', () => {
                 window.top.location.reload();
-            }
-        });
+            });
+        }
+
+        // otherwise, for other browsers, listen for the 'pagehide' event to reload the top window
+        else {
+            // if the iframe reloads, also reload the top window to prevent bugs
+            window.addEventListener('pagehide', (event) => {
+                // only do it if it’s a page reload, not when the user uses the back/forward buttons
+                if (!event.persisted) {
+                    window.top.location.reload();
+                }
+            });
+        }
 
         // adds the listener for when the embedded player fully loads
         document.addEventListener('DOMContentLoaded', () => {

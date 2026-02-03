@@ -1376,6 +1376,11 @@
 
             // otherwise, if we are not on a playlist, and we are going to a normal video, fake an SPA navigation and do NOT reload the page (faster video loading)
             else {
+                // loads the video by id first
+                IframeTube_iframe_api = document.getElementById('movie_player');
+                IframeTube_iframe_api.loadVideoById(videoId);
+
+                // creates the yt-navigate event with the video id
                 let navEvent = new CustomEvent('yt-navigate', {
                     detail: {
                         endpoint: {
