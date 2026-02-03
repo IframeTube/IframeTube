@@ -34,9 +34,16 @@ Preview of how YouTube looks with IframeTube enabled:
 ### Chrome
 
 1. Go to the Chrome Web Store:
-   [https://chromewebstore.google.com](https://chromewebstore.google.com)
+   [IframeTube for Chrome](https://chromewebstore.google.com/detail/iframetube-youtube-adbloc/popbfaalnmahdonefnbbogalimefpcnm)
 2. Click **Add to Chrome** to install IframeTube.
-3. Install any ad blocker of your choice
+3. Install any ad blocker of your choice (this is going to work together with IframeTube)
+   *(I personally recommend uBlock Origin or uBlock Origin Lite).*
+4. Open YouTube and enjoy 🙂
+
+1. Go to Firefox ADD-ONS:
+   [IframeTube for Firefox](https://addons.mozilla.org/en-US/firefox/addon/iframetube-youtube-adblocker/)
+2. Click **Add to Firefox** to install IframeTube.
+3. Install any ad blocker of your choice (this is going to work together with IframeTube)
    *(I personally recommend uBlock Origin or uBlock Origin Lite).*
 4. Open YouTube and enjoy 🙂
 
@@ -74,7 +81,7 @@ Top Window (youtube.com)
 The main YouTube page creates an iframe pointing to `example.net`. The extension injects a script into that iframe, which then creates the YouTube embedded player. Another script is injected into the embedded player itself, giving full access to styles, functions, and UI logic. All frames communicate via postMessage.
 
 For more details, see the full documentation here:
-[LINK](LINK)
+[IframeTube Wiki](https://github.com/IframeTube/IframeTube/wiki)
 
 ---
 
@@ -178,7 +185,7 @@ IframeTube is currently **not supported on mobile or tablet devices**.
 #### 8. Where can I find documentation?
 
 Full documentation is available here:
-[LINK](LINK)
+[IframeTube wiki](https://github.com/IframeTube/IframeTube/wiki)
 
 
 #### 9. I though the embedded player had ads for decaded?
@@ -196,8 +203,8 @@ that you can just use for free. I want this to finally become a solution and pre
 ## DONATION
 This project was entirely developed by me, and I spent weeks debugging the page and recreating features. Any donation, no matter the amount, would be greately appreciated :).
 
-You can donate here:
-[LINK](LINK) 
+You can donate here (soon):
+[LINK](LINK)
 
 ## Copyright
 
