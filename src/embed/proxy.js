@@ -7,9 +7,16 @@
 // if you encounter any issues, please report them here: https://github.com/IframeTube/IframeTube/issues
 
 
-// wraps everything inside an IIFE (this avoids some edge cases)
-(function () {
+let IframeTube_initProxy_timeout = false;
+function IframeTube_initProxy() {
     'use strict';  // better for debugging
+
+    // if document body does not exist yet, retry in 100ms until it does
+    if (!document.body) {
+        clearTimeout(IframeTube_initProxy_timeout);
+        IframeTube_initProxy_timeout = setTimeout(IframeTube_initProxy, 100);
+        return;
+    }
 
     // hide all other elements
     let elements = document.querySelectorAll('body > *');
@@ -72,4 +79,7 @@
     window.top.postMessage('IframeTube_proxyLoaded', '*');
 
     // end of IIFE
-})();
+}
+
+// inits the proxy
+IframeTube_initProxy();
