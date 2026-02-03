@@ -560,6 +560,9 @@
         // if we did not embed a video yet, embed it now
         if (!IframeTube_embeddedVideo) {
 
+            // copy the autoplay attribute only once on the first video embed
+            IframeTube_copyAutoPlayAttribute();
+
             // the ?IframeTubeEmbed=1 param is an indicator that this is our embed URL
             // we use autoplay=1 to make sure the video autoplays and IframeTube_autoPlay to control the autoplay’s button state, for the language we use the hl param and also set the start time if it exists
             // send the embed url to the proxy iframe
@@ -1414,7 +1417,6 @@
         IframeTube_setLowestQuality();
         IframeTube_fixShortsQuality();
         IframeTube_initTheaterButton();
-        IframeTube_copyAutoPlayAttribute();
 
         // adds an event listener for yt-navigate (fires whenever you navigate to a new page on Youtube)
         document.addEventListener('yt-navigate', () => {
