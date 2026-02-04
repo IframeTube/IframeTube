@@ -876,14 +876,13 @@
     // copy the native autoplay button attributes, we do this to get the attribute in the current language
     let IframeTube_copyAutoPlayAttribute_timeout = false;
     function IframeTube_copyAutoPlayAttribute() {
-
         // get the native button
         let nativeButton = document.querySelector('#movie_player .ytp-autonav-toggle-button');
         // get the native’s button text (tooltip is stored here)
         let nativeText = document.querySelector('.ytp-autonav-toggle');
 
-        // if they both exist, and the text has the 'aria-label' attribute
-        if (nativeButton && nativeText && nativeText.getAttribute('aria-label')) {
+        // if they both exist, and the text has the 'aria-label' attribute, and the embedded player has loaded
+        if (nativeButton && nativeText && nativeText.getAttribute('aria-label') && IframeTube_youtubePlayerLoaded) {
             // init the texts as false
             let enabledText = false;
             let disabledText = false;
