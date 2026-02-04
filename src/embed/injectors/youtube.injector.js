@@ -2,7 +2,7 @@
 if (chrome.storage.local) {
     chrome.storage.local.get("IframeTubeEnabled", (result) => {
         let enabled = result.IframeTubeEnabled;
-        // if there is no cookies, enable by default
+        // if there is no cookie, enable by default
         if (enabled === undefined) {
             enabled = true;
             chrome.storage.local.set({ "IframeTubeEnabled": true });

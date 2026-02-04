@@ -258,7 +258,15 @@
     */
 
     // hides ads and other unwanted elements on the page
+    let IframeTube_hidePageAdsEtc_timeout = false;
     function IframeTube_hidePageAdsEtc() {
+        // retry if the head does not exist yet
+        if (!document.head) {
+            clearTimeout(IframeTube_hidePageAdsEtc_timeout);
+            IframeTube_hidePageAdsEtc_timeout = setTimeout(IframeTube_hidePageAdsEtc, 100);
+            return;
+        }
+
         let style = document.createElement('style')
 
         style.textContent = `
@@ -559,7 +567,6 @@
 
         // if we did not embed a video yet, embed it now
         if (!IframeTube_embeddedVideo) {
-
             // copy the autoplay attribute only once on the first video embed
             IframeTube_copyAutoPlayAttribute();
 
@@ -582,9 +589,9 @@
             );
         }
 
-        // if there is no start time param, try to sync the Youtube main’s player start time
         // sometimes even though the 't' param is 0 or does not exist, Youtube synces to the last time you left the video
-        if (startTimeNumber <= 0) {
+        // if there is no start time param, and we are not watching a playlist, try to sync the Youtube main’s player start time
+        if (startTimeNumber <= 0 && !IframeTube_playlist) {
             IframeTube_syncStart();
         }
     }
